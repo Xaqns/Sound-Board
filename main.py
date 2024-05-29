@@ -1,8 +1,6 @@
 import sys
 import os
 import shutil
-import QtQuick 2.0
-import QtQuick.Particles 2.0
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QHBoxLayout, QFileDialog, QGridLayout, QSizePolicy, QSpacerItem, QLabel, QLineEdit, QMessageBox
 from PyQt5.QtGui import QPalette, QColor, QFont
 from PyQt5.QtCore import Qt, QPropertyAnimation, QRect
