@@ -138,6 +138,7 @@ class SoundboardApp(QWidget):
                 full_path = os.path.join(self.sounds_dir, file_name)
                 if os.path.isfile(full_path):
                     self.add_sound_button(full_path)
+                    print(f"Added sound: {file_name}")
                     
     def edit_sound_name(self, file_name, sound_button):
         new_name, ok = QFileDialog.getSaveFileName(self, "Rename Sound File", file_name, "Audio Files (*.wav *.mp3)")
@@ -147,6 +148,7 @@ class SoundboardApp(QWidget):
             sound_button.setText(os.path.basename(new_file_path))
             self.sounds.remove(file_name)
             self.sounds.append(new_file_path)
+            print(f"Renamed: {file_name}")
 
     def delete_sound(self, file_name, sound_button_layout):
         reply = QMessageBox.question(self, 'Delete Sound', f"Are you sure you want to delete {os.path.basename(file_name)}?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
@@ -154,6 +156,7 @@ class SoundboardApp(QWidget):
             os.remove(file_name)
             self.sounds.remove(file_name)
             self.clear_layout(sound_button_layout)
+            print(f"Removed: {file_name}")
 
     def clear_layout(self, layout):
         if layout is not None:
